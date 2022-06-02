@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="494a2327979a48d6947be42d7bef6f32" Name="Diagram1">
+        <EntityTypeShape EntityType="MineriaModel.Auditoria" Width="1.5" PointX="0.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MineriaModel.Cargos" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MineriaModel.Detalle_Extraccion" Width="1.5" PointX="9.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MineriaModel.Empleado" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MineriaModel.Extraccion" Width="1.5" PointX="7.5" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="MineriaModel.Mantenimiento" Width="1.5" PointX="15" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="MineriaModel.Maquinaria" Width="1.5" PointX="12.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MineriaModel.Mineral" Width="1.5" PointX="7.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MineriaModel.Ubigeo" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MineriaModel.Unidad" Width="1.5" PointX="7.5" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MineriaModel.Usuario" Width="1.5" PointX="2.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MineriaModel.Yacimiento" Width="1.5" PointX="5.25" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="MineriaModel.Empleado_Aud" Width="1.5" PointX="4.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MineriaModel.Extraccion_aud" Width="1.5" PointX="9.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MineriaModel.Mantenimiento_aud" Width="1.5" PointX="6.75" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MineriaModel.Maquinaria_aud" Width="1.5" PointX="8.75" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MineriaModel.Yacimiento_aud" Width="1.5" PointX="10.75" PointY="11.875" IsExpanded="true" />
+        <AssociationConnector Association="MineriaModel.FK_id_cargo" ManuallyRouted="false" />
+        <AssociationConnector Association="MineriaModel.FK__Detalle_E__id_ex__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="MineriaModel.FK__Detalle_E__id_mi__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="MineriaModel.FK__Detalle_E__id_un__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="MineriaModel.FK_id_ubigeo" ManuallyRouted="false" />
+        <AssociationConnector Association="MineriaModel.FK__Extraccio__id_ya__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="MineriaModel.FK_Mant_id_maquinaria" ManuallyRouted="false" />
+        <AssociationConnector Association="MineriaModel.FK__Maquinari__id_ya__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="MineriaModel.FK_Yac_id_ubigeo" ManuallyRouted="false" />
+        <AssociationConnector Association="MineriaModel.Asignacion_empleados" ManuallyRouted="false" />
+        <AssociationConnector Association="MineriaModel.Asignacion_maquinaria" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

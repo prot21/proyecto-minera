@@ -1,0 +1,744 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MineriaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Asignacion_empleados">
+    <Key>
+      <PropertyRef Name="id_yacimiento" />
+      <PropertyRef Name="id_empleado" />
+    </Key>
+    <Property Name="id_yacimiento" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="id_empleado" Type="char" MaxLength="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Asignacion_maquinaria">
+    <Key>
+      <PropertyRef Name="id_extraccion" />
+      <PropertyRef Name="id_maquinaria" />
+    </Key>
+    <Property Name="id_extraccion" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="id_maquinaria" Type="char" MaxLength="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Auditoria">
+    <Key>
+      <PropertyRef Name="id_reg" />
+    </Key>
+    <Property Name="id_reg" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fec_ult_registro" Type="datetime" />
+    <Property Name="usu_ult_reg" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Cargos">
+    <Key>
+      <PropertyRef Name="id_cargo" />
+    </Key>
+    <Property Name="id_cargo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Detalle_Extraccion">
+    <Key>
+      <PropertyRef Name="id_extraccion" />
+      <PropertyRef Name="id_mineral" />
+    </Key>
+    <Property Name="id_extraccion" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="id_mineral" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="cantidad" Type="float" />
+    <Property Name="id_unidad" Type="int" />
+  </EntityType>
+  <EntityType Name="Empleado">
+    <Key>
+      <PropertyRef Name="id_empleado" />
+    </Key>
+    <Property Name="id_empleado" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="apellidopat" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="apellidomat" Type="nvarchar" MaxLength="80" />
+    <Property Name="documento" Type="nvarchar" MaxLength="20" />
+    <Property Name="sueldo" Type="money" />
+    <Property Name="fec_nac" Type="date" />
+    <Property Name="sexo" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="fechaIngreso" Type="datetime" />
+    <Property Name="telefono" Type="nvarchar" MaxLength="15" />
+    <Property Name="correo" Type="nvarchar" MaxLength="50" />
+    <Property Name="foto" Type="nvarchar" MaxLength="60" />
+    <Property Name="id_ubigeo" Type="nchar" MaxLength="6" Nullable="false" />
+    <Property Name="id_cargo" Type="int" Nullable="false" />
+    <Property Name="est_emp" Type="char" MaxLength="1" />
+    <Property Name="fec_reg" Type="datetime" />
+    <Property Name="usu_reg" Type="varchar" MaxLength="20" />
+    <Property Name="fec_ult_mod" Type="datetime" />
+    <Property Name="usu_ult_mod" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Mineria.dbo.Empleado_Aud' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="Empleado_Aud">
+    <Key>
+      <PropertyRef Name="id_empleado" />
+      <PropertyRef Name="nombre" />
+      <PropertyRef Name="apellidopat" />
+      <PropertyRef Name="sexo" />
+      <PropertyRef Name="id_ubigeo" />
+      <PropertyRef Name="id_cargo" />
+    </Key>
+    <Property Name="id_empleado" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="apellidopat" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="apellidomat" Type="nvarchar" MaxLength="80" />
+    <Property Name="documento" Type="nvarchar" MaxLength="20" />
+    <Property Name="sueldo" Type="money" />
+    <Property Name="fec_nac" Type="date" />
+    <Property Name="sexo" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="fechaIngreso" Type="datetime" />
+    <Property Name="telefono" Type="nvarchar" MaxLength="15" />
+    <Property Name="correo" Type="nvarchar" MaxLength="50" />
+    <Property Name="foto" Type="nvarchar" MaxLength="60" />
+    <Property Name="id_ubigeo" Type="nchar" MaxLength="6" Nullable="false" />
+    <Property Name="id_cargo" Type="int" Nullable="false" />
+    <Property Name="est_emp" Type="char" MaxLength="1" />
+    <Property Name="fec_reg" Type="datetime" />
+    <Property Name="usu_reg" Type="varchar" MaxLength="20" />
+    <Property Name="fec_ult_mod" Type="datetime" />
+    <Property Name="usu_ult_mod" Type="varchar" MaxLength="20" />
+    <Property Name="accion" Type="varchar" MaxLength="20" />
+    <Property Name="fechaAccion" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Extraccion">
+    <Key>
+      <PropertyRef Name="id_extraccion" />
+    </Key>
+    <Property Name="id_extraccion" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="fechaInicio" Type="datetime" />
+    <Property Name="fechaFin" Type="datetime" />
+    <Property Name="est_extraccion" Type="char" MaxLength="1" />
+    <Property Name="id_yacimiento" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="fec_reg" Type="datetime" />
+    <Property Name="usu_reg" Type="varchar" MaxLength="20" />
+    <Property Name="fec_ult_mod" Type="date" />
+    <Property Name="usu_ult_mod" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Mineria.dbo.Extraccion_aud' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="Extraccion_aud">
+    <Key>
+      <PropertyRef Name="id_extraccion" />
+    </Key>
+    <Property Name="id_extraccion" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="fechaInicio" Type="datetime" />
+    <Property Name="fechaFin" Type="datetime" />
+    <Property Name="est_extraccion" Type="char" MaxLength="1" />
+    <Property Name="id_yacimiento" Type="char" MaxLength="4" />
+    <Property Name="fec_reg" Type="datetime" />
+    <Property Name="usu_reg" Type="varchar" MaxLength="20" />
+    <Property Name="fec_ult_mod" Type="date" />
+    <Property Name="usu_ult_mod" Type="varchar" MaxLength="20" />
+    <Property Name="accion" Type="varchar" MaxLength="20" />
+    <Property Name="fechaAccion" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Mantenimiento">
+    <Key>
+      <PropertyRef Name="id_mantenimiento" />
+    </Key>
+    <Property Name="id_mantenimiento" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="id_maquinaria" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="tipo" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="fechaInicio" Type="datetime" Nullable="false" />
+    <Property Name="fechaFin" Type="datetime" />
+    <Property Name="est_man" Type="char" MaxLength="1" />
+    <Property Name="comentario" Type="nvarchar" MaxLength="255" />
+    <Property Name="fec_reg" Type="datetime" />
+    <Property Name="usu_reg" Type="varchar" MaxLength="20" />
+    <Property Name="fec_ult_mod" Type="datetime" />
+    <Property Name="usu_ult_mod" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Mineria.dbo.Mantenimiento_aud' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="Mantenimiento_aud">
+    <Key>
+      <PropertyRef Name="id_mantenimiento" />
+      <PropertyRef Name="id_maquinaria" />
+      <PropertyRef Name="tipo" />
+      <PropertyRef Name="fechaInicio" />
+    </Key>
+    <Property Name="id_mantenimiento" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="id_maquinaria" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="tipo" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="fechaInicio" Type="datetime" Nullable="false" />
+    <Property Name="fechaFin" Type="datetime" />
+    <Property Name="est_man" Type="char" MaxLength="1" />
+    <Property Name="comentario" Type="nvarchar" MaxLength="255" />
+    <Property Name="fec_reg" Type="datetime" />
+    <Property Name="usu_reg" Type="varchar" MaxLength="20" />
+    <Property Name="fec_ult_mod" Type="datetime" />
+    <Property Name="usu_ult_mod" Type="varchar" MaxLength="20" />
+    <Property Name="accion" Type="varchar" MaxLength="20" />
+    <Property Name="fechaAccion" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Maquinaria">
+    <Key>
+      <PropertyRef Name="id_maquinaria" />
+    </Key>
+    <Property Name="id_maquinaria" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="id_yacimiento" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="tipo" Type="nvarchar" MaxLength="20" />
+    <Property Name="marca" Type="nvarchar" MaxLength="60" />
+    <Property Name="modelo" Type="nvarchar" MaxLength="60" />
+    <Property Name="est_maq" Type="char" MaxLength="1" />
+    <Property Name="UltRevision" Type="datetime" />
+    <Property Name="fec_reg" Type="datetime" />
+    <Property Name="usu_reg" Type="varchar" MaxLength="20" />
+    <Property Name="fec_ult_mod" Type="datetime" />
+    <Property Name="usu_ult_mod" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Mineria.dbo.Maquinaria_aud' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="Maquinaria_aud">
+    <Key>
+      <PropertyRef Name="id_maquinaria" />
+      <PropertyRef Name="id_yacimiento" />
+    </Key>
+    <Property Name="id_maquinaria" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="id_yacimiento" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="tipo" Type="nvarchar" MaxLength="20" />
+    <Property Name="marca" Type="nvarchar" MaxLength="60" />
+    <Property Name="modelo" Type="nvarchar" MaxLength="60" />
+    <Property Name="est_maq" Type="char" MaxLength="1" />
+    <Property Name="UltRevision" Type="datetime" />
+    <Property Name="fec_reg" Type="datetime" />
+    <Property Name="usu_reg" Type="varchar" MaxLength="20" />
+    <Property Name="fec_ult_mod" Type="datetime" />
+    <Property Name="usu_ult_mod" Type="varchar" MaxLength="20" />
+    <Property Name="accion" Type="varchar" MaxLength="20" />
+    <Property Name="fechaAccion" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Mineral">
+    <Key>
+      <PropertyRef Name="id_mineral" />
+    </Key>
+    <Property Name="id_mineral" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="mineral_nombre" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Ubigeo">
+    <Key>
+      <PropertyRef Name="Id_Ubigeo" />
+    </Key>
+    <Property Name="Id_Ubigeo" Type="nchar" MaxLength="6" Nullable="false" />
+    <Property Name="IdDepa" Type="nvarchar" MaxLength="255" />
+    <Property Name="IdProv" Type="nvarchar" MaxLength="255" />
+    <Property Name="IdDist" Type="nvarchar" MaxLength="255" />
+    <Property Name="Departamento" Type="nvarchar" MaxLength="255" />
+    <Property Name="Provincia" Type="nvarchar" MaxLength="255" />
+    <Property Name="Distrito" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Unidad">
+    <Key>
+      <PropertyRef Name="id_unidad" />
+    </Key>
+    <Property Name="id_unidad" Type="int" Nullable="false" />
+    <Property Name="descripcion" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="login_usuario" />
+    </Key>
+    <Property Name="login_usuario" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="pass_usuario" Type="varchar" MaxLength="20" />
+    <Property Name="niv_usuario" Type="int" />
+    <Property Name="est_usuario" Type="int" />
+    <Property Name="fec_reg" Type="datetime" />
+    <Property Name="usu_reg" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Yacimiento">
+    <Key>
+      <PropertyRef Name="id_yacimiento" />
+    </Key>
+    <Property Name="id_yacimiento" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="id_ubigeo" Type="nchar" MaxLength="6" Nullable="false" />
+    <Property Name="fechaInicio" Type="datetime" />
+    <Property Name="est_yac" Type="char" MaxLength="1" />
+    <Property Name="fec_reg" Type="datetime" />
+    <Property Name="usu_reg" Type="varchar" MaxLength="20" />
+    <Property Name="fec_ult_mod" Type="date" />
+    <Property Name="usu_ult_mod" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Mineria.dbo.Yacimiento_aud' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="Yacimiento_aud">
+    <Key>
+      <PropertyRef Name="id_yacimiento" />
+      <PropertyRef Name="nombre" />
+      <PropertyRef Name="id_ubigeo" />
+    </Key>
+    <Property Name="id_yacimiento" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="id_ubigeo" Type="nchar" MaxLength="6" Nullable="false" />
+    <Property Name="fechaInicio" Type="datetime" />
+    <Property Name="est_yac" Type="char" MaxLength="1" />
+    <Property Name="fec_reg" Type="datetime" />
+    <Property Name="usu_reg" Type="varchar" MaxLength="20" />
+    <Property Name="fec_ult_mod" Type="date" />
+    <Property Name="usu_ult_mod" Type="varchar" MaxLength="20" />
+    <Property Name="accion" Type="varchar" MaxLength="20" />
+    <Property Name="fechaAccion" Type="datetime" />
+  </EntityType>
+  <Association Name="FK__Asignacio__id_em__37A5467C">
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
+    <End Role="Asignacion_empleados" Type="Self.Asignacion_empleados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="id_empleado" />
+      </Principal>
+      <Dependent Role="Asignacion_empleados">
+        <PropertyRef Name="id_empleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Asignacio__id_ex__3A81B327">
+    <End Role="Extraccion" Type="Self.Extraccion" Multiplicity="1" />
+    <End Role="Asignacion_maquinaria" Type="Self.Asignacion_maquinaria" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Extraccion">
+        <PropertyRef Name="id_extraccion" />
+      </Principal>
+      <Dependent Role="Asignacion_maquinaria">
+        <PropertyRef Name="id_extraccion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Asignacio__id_ma__3B75D760">
+    <End Role="Maquinaria" Type="Self.Maquinaria" Multiplicity="1" />
+    <End Role="Asignacion_maquinaria" Type="Self.Asignacion_maquinaria" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Maquinaria">
+        <PropertyRef Name="id_maquinaria" />
+      </Principal>
+      <Dependent Role="Asignacion_maquinaria">
+        <PropertyRef Name="id_maquinaria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Asignacio__id_ya__36B12243">
+    <End Role="Yacimiento" Type="Self.Yacimiento" Multiplicity="1" />
+    <End Role="Asignacion_empleados" Type="Self.Asignacion_empleados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Yacimiento">
+        <PropertyRef Name="id_yacimiento" />
+      </Principal>
+      <Dependent Role="Asignacion_empleados">
+        <PropertyRef Name="id_yacimiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Detalle_E__id_ex__403A8C7D">
+    <End Role="Extraccion" Type="Self.Extraccion" Multiplicity="1" />
+    <End Role="Detalle_Extraccion" Type="Self.Detalle_Extraccion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Extraccion">
+        <PropertyRef Name="id_extraccion" />
+      </Principal>
+      <Dependent Role="Detalle_Extraccion">
+        <PropertyRef Name="id_extraccion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Detalle_E__id_mi__412EB0B6">
+    <End Role="Mineral" Type="Self.Mineral" Multiplicity="1" />
+    <End Role="Detalle_Extraccion" Type="Self.Detalle_Extraccion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mineral">
+        <PropertyRef Name="id_mineral" />
+      </Principal>
+      <Dependent Role="Detalle_Extraccion">
+        <PropertyRef Name="id_mineral" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Detalle_E__id_un__4222D4EF">
+    <End Role="Unidad" Type="Self.Unidad" Multiplicity="0..1" />
+    <End Role="Detalle_Extraccion" Type="Self.Detalle_Extraccion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unidad">
+        <PropertyRef Name="id_unidad" />
+      </Principal>
+      <Dependent Role="Detalle_Extraccion">
+        <PropertyRef Name="id_unidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Extraccio__id_ya__31EC6D26">
+    <End Role="Yacimiento" Type="Self.Yacimiento" Multiplicity="1" />
+    <End Role="Extraccion" Type="Self.Extraccion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Yacimiento">
+        <PropertyRef Name="id_yacimiento" />
+      </Principal>
+      <Dependent Role="Extraccion">
+        <PropertyRef Name="id_yacimiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Maquinari__id_ya__2F10007B">
+    <End Role="Yacimiento" Type="Self.Yacimiento" Multiplicity="1" />
+    <End Role="Maquinaria" Type="Self.Maquinaria" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Yacimiento">
+        <PropertyRef Name="id_yacimiento" />
+      </Principal>
+      <Dependent Role="Maquinaria">
+        <PropertyRef Name="id_yacimiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_id_cargo">
+    <End Role="Cargos" Type="Self.Cargos" Multiplicity="1" />
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cargos">
+        <PropertyRef Name="id_cargo" />
+      </Principal>
+      <Dependent Role="Empleado">
+        <PropertyRef Name="id_cargo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_id_ubigeo">
+    <End Role="Ubigeo" Type="Self.Ubigeo" Multiplicity="1" />
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ubigeo">
+        <PropertyRef Name="Id_Ubigeo" />
+      </Principal>
+      <Dependent Role="Empleado">
+        <PropertyRef Name="id_ubigeo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Mant_id_maquinaria">
+    <End Role="Maquinaria" Type="Self.Maquinaria" Multiplicity="1" />
+    <End Role="Mantenimiento" Type="Self.Mantenimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Maquinaria">
+        <PropertyRef Name="id_maquinaria" />
+      </Principal>
+      <Dependent Role="Mantenimiento">
+        <PropertyRef Name="id_maquinaria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Yac_id_ubigeo">
+    <End Role="Ubigeo" Type="Self.Ubigeo" Multiplicity="1" />
+    <End Role="Yacimiento" Type="Self.Yacimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ubigeo">
+        <PropertyRef Name="Id_Ubigeo" />
+      </Principal>
+      <Dependent Role="Yacimiento">
+        <PropertyRef Name="id_ubigeo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="usp_ActualizarEmpleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_empleado" Type="char" Mode="In" />
+    <Parameter Name="nombre" Type="varchar" Mode="In" />
+    <Parameter Name="apellidopat" Type="varchar" Mode="In" />
+    <Parameter Name="apellidomat" Type="varchar" Mode="In" />
+    <Parameter Name="documento" Type="varchar" Mode="In" />
+    <Parameter Name="sueldo" Type="money" Mode="In" />
+    <Parameter Name="fec_nac" Type="date" Mode="In" />
+    <Parameter Name="sexo" Type="char" Mode="In" />
+    <Parameter Name="telefono" Type="varchar" Mode="In" />
+    <Parameter Name="correo" Type="varchar" Mode="In" />
+    <Parameter Name="foto" Type="varchar" Mode="In" />
+    <Parameter Name="id_ubigeo" Type="char" Mode="In" />
+    <Parameter Name="id_cargo" Type="int" Mode="In" />
+    <Parameter Name="est_emp" Type="char" Mode="In" />
+    <Parameter Name="usu_reg" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_ActualizarExtraccion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_extraccion" Type="char" Mode="In" />
+    <Parameter Name="fechaInicio" Type="datetime" Mode="In" />
+    <Parameter Name="fechaFin" Type="datetime" Mode="In" />
+    <Parameter Name="est_extraccion" Type="char" Mode="In" />
+    <Parameter Name="id_yacimiento" Type="char" Mode="In" />
+    <Parameter Name="usu_reg" Type="varchar" Mode="In" />
+    <Parameter Name="usu_ult_mod" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_ActualizarMantenimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_mantenimiento" Type="char" Mode="In" />
+    <Parameter Name="id_maquinaria" Type="char" Mode="In" />
+    <Parameter Name="tipo" Type="char" Mode="In" />
+    <Parameter Name="fechaInicio" Type="datetime" Mode="In" />
+    <Parameter Name="fechaFin" Type="datetime" Mode="In" />
+    <Parameter Name="est_man" Type="char" Mode="In" />
+    <Parameter Name="comentario" Type="nvarchar" Mode="In" />
+    <Parameter Name="usu_ult_mod" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_ActualizarMaquinaria" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_maquinaria" Type="char" Mode="In" />
+    <Parameter Name="id_yacimiento" Type="char" Mode="In" />
+    <Parameter Name="tipo" Type="nvarchar" Mode="In" />
+    <Parameter Name="marca" Type="nvarchar" Mode="In" />
+    <Parameter Name="modelo" Type="nvarchar" Mode="In" />
+    <Parameter Name="est_maq" Type="char" Mode="In" />
+    <Parameter Name="UltRevision" Type="date" Mode="In" />
+    <Parameter Name="usu_ult_mod" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_ActualizarYacimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idYacimiento" Type="char" Mode="In" />
+    <Parameter Name="nombre" Type="varchar" Mode="In" />
+    <Parameter Name="idUbigeo" Type="nchar" Mode="In" />
+    <Parameter Name="fecInicio" Type="datetime" Mode="In" />
+    <Parameter Name="estado" Type="char" Mode="In" />
+    <Parameter Name="usuUltMod" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_ConsultarEmpleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_empleado" Type="char" Mode="In" />
+  </Function>
+  <Function Name="usp_ConsultarExtraccion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_extraccion" Type="char" Mode="In" />
+  </Function>
+  <Function Name="usp_ConsultarMantenimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_mantenimiento" Type="char" Mode="In" />
+  </Function>
+  <Function Name="usp_ConsultarMaquinaria" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_maquinaria" Type="char" Mode="In" />
+  </Function>
+  <Function Name="usp_ConsultarYacimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idYacimiento" Type="char" Mode="In" />
+  </Function>
+  <Function Name="usp_EliminarEmpleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_empleado" Type="char" Mode="In" />
+  </Function>
+  <Function Name="usp_EliminarExtraccion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_extraccion" Type="char" Mode="In" />
+  </Function>
+  <Function Name="usp_EliminarMantenimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_mantenimiento" Type="char" Mode="In" />
+  </Function>
+  <Function Name="usp_EliminarMaquinaria" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_maquinaria" Type="char" Mode="In" />
+  </Function>
+  <Function Name="usp_EliminarYacimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idYacimiento" Type="char" Mode="In" />
+  </Function>
+  <Function Name="usp_InsertaExtraccion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fechaInicio" Type="datetime" Mode="In" />
+    <Parameter Name="fechaFin" Type="datetime" Mode="In" />
+    <Parameter Name="est_extraccion" Type="char" Mode="In" />
+    <Parameter Name="id_yacimiento" Type="char" Mode="In" />
+    <Parameter Name="usu_reg" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_InsertarEmpleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nombre" Type="varchar" Mode="In" />
+    <Parameter Name="apellidopat" Type="varchar" Mode="In" />
+    <Parameter Name="apellidomat" Type="varchar" Mode="In" />
+    <Parameter Name="documento" Type="varchar" Mode="In" />
+    <Parameter Name="sueldo" Type="money" Mode="In" />
+    <Parameter Name="fec_nac" Type="date" Mode="In" />
+    <Parameter Name="sexo" Type="char" Mode="In" />
+    <Parameter Name="telefono" Type="varchar" Mode="In" />
+    <Parameter Name="correo" Type="varchar" Mode="In" />
+    <Parameter Name="foto" Type="varchar" Mode="In" />
+    <Parameter Name="id_ubigeo" Type="char" Mode="In" />
+    <Parameter Name="id_cargo" Type="int" Mode="In" />
+    <Parameter Name="est_emp" Type="char" Mode="In" />
+    <Parameter Name="usu_reg" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_InsertarMantenimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_maquinaria" Type="char" Mode="In" />
+    <Parameter Name="tipo" Type="char" Mode="In" />
+    <Parameter Name="fechaInicio" Type="datetime" Mode="In" />
+    <Parameter Name="fechaFin" Type="datetime" Mode="In" />
+    <Parameter Name="est_man" Type="char" Mode="In" />
+    <Parameter Name="comentario" Type="nvarchar" Mode="In" />
+    <Parameter Name="usu_reg" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_InsertarMaquinaria" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_yacimiento" Type="char" Mode="In" />
+    <Parameter Name="tipo" Type="nvarchar" Mode="In" />
+    <Parameter Name="marca" Type="nvarchar" Mode="In" />
+    <Parameter Name="modelo" Type="nvarchar" Mode="In" />
+    <Parameter Name="est_maq" Type="char" Mode="In" />
+    <Parameter Name="UltRevision" Type="date" Mode="In" />
+    <Parameter Name="usu_reg" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_InsertarYacimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nombre" Type="varchar" Mode="In" />
+    <Parameter Name="idUbigeo" Type="nchar" Mode="In" />
+    <Parameter Name="fecInicio" Type="datetime" Mode="In" />
+    <Parameter Name="estado" Type="char" Mode="In" />
+    <Parameter Name="usu_reg" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_ListarEmpleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="usp_ListarExtraccion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="usp_ListarExtracciones_Paginacion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_yacimiento" Type="varchar" Mode="In" />
+    <Parameter Name="nombre" Type="varchar" Mode="In" />
+    <Parameter Name="est_extraccion" Type="varchar" Mode="In" />
+    <Parameter Name="NUMREG" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="usp_ListarMantenimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="usp_ListarMaquinaria" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="usp_ListarYacimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="usp_RegistrarExtraMinerales" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fechaInicio" Type="datetime" Mode="In" />
+    <Parameter Name="fechaFin" Type="datetime" Mode="In" />
+    <Parameter Name="est_extraccion" Type="char" Mode="In" />
+    <Parameter Name="id_yacimiento" Type="char" Mode="In" />
+    <Parameter Name="usu_reg" Type="varchar" Mode="In" />
+    <Parameter Name="id_extraccion" Type="char" Mode="InOut" />
+  </Function>
+  <EntityContainer Name="MineriaModelStoreContainer">
+    <EntitySet Name="Asignacion_empleados" EntityType="Self.Asignacion_empleados" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Asignacion_maquinaria" EntityType="Self.Asignacion_maquinaria" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Auditoria" EntityType="Self.Auditoria" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cargos" EntityType="Self.Cargos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Detalle_Extraccion" EntityType="Self.Detalle_Extraccion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Empleado" EntityType="Self.Empleado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Extraccion" EntityType="Self.Extraccion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mantenimiento" EntityType="Self.Mantenimiento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Maquinaria" EntityType="Self.Maquinaria" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mineral" EntityType="Self.Mineral" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ubigeo" EntityType="Self.Ubigeo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Unidad" EntityType="Self.Unidad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Yacimiento" EntityType="Self.Yacimiento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Empleado_Aud" EntityType="Self.Empleado_Aud" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Empleado_Aud].[id_empleado] AS [id_empleado], 
+    [Empleado_Aud].[nombre] AS [nombre], 
+    [Empleado_Aud].[apellidopat] AS [apellidopat], 
+    [Empleado_Aud].[apellidomat] AS [apellidomat], 
+    [Empleado_Aud].[documento] AS [documento], 
+    [Empleado_Aud].[sueldo] AS [sueldo], 
+    [Empleado_Aud].[fec_nac] AS [fec_nac], 
+    [Empleado_Aud].[sexo] AS [sexo], 
+    [Empleado_Aud].[fechaIngreso] AS [fechaIngreso], 
+    [Empleado_Aud].[telefono] AS [telefono], 
+    [Empleado_Aud].[correo] AS [correo], 
+    [Empleado_Aud].[foto] AS [foto], 
+    [Empleado_Aud].[id_ubigeo] AS [id_ubigeo], 
+    [Empleado_Aud].[id_cargo] AS [id_cargo], 
+    [Empleado_Aud].[est_emp] AS [est_emp], 
+    [Empleado_Aud].[fec_reg] AS [fec_reg], 
+    [Empleado_Aud].[usu_reg] AS [usu_reg], 
+    [Empleado_Aud].[fec_ult_mod] AS [fec_ult_mod], 
+    [Empleado_Aud].[usu_ult_mod] AS [usu_ult_mod], 
+    [Empleado_Aud].[accion] AS [accion], 
+    [Empleado_Aud].[fechaAccion] AS [fechaAccion]
+    FROM [dbo].[Empleado_Aud] AS [Empleado_Aud]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Extraccion_aud" EntityType="Self.Extraccion_aud" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Extraccion_aud].[id_extraccion] AS [id_extraccion], 
+    [Extraccion_aud].[fechaInicio] AS [fechaInicio], 
+    [Extraccion_aud].[fechaFin] AS [fechaFin], 
+    [Extraccion_aud].[est_extraccion] AS [est_extraccion], 
+    [Extraccion_aud].[id_yacimiento] AS [id_yacimiento], 
+    [Extraccion_aud].[fec_reg] AS [fec_reg], 
+    [Extraccion_aud].[usu_reg] AS [usu_reg], 
+    [Extraccion_aud].[fec_ult_mod] AS [fec_ult_mod], 
+    [Extraccion_aud].[usu_ult_mod] AS [usu_ult_mod], 
+    [Extraccion_aud].[accion] AS [accion], 
+    [Extraccion_aud].[fechaAccion] AS [fechaAccion]
+    FROM [dbo].[Extraccion_aud] AS [Extraccion_aud]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Mantenimiento_aud" EntityType="Self.Mantenimiento_aud" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Mantenimiento_aud].[id_mantenimiento] AS [id_mantenimiento], 
+    [Mantenimiento_aud].[id_maquinaria] AS [id_maquinaria], 
+    [Mantenimiento_aud].[tipo] AS [tipo], 
+    [Mantenimiento_aud].[fechaInicio] AS [fechaInicio], 
+    [Mantenimiento_aud].[fechaFin] AS [fechaFin], 
+    [Mantenimiento_aud].[est_man] AS [est_man], 
+    [Mantenimiento_aud].[comentario] AS [comentario], 
+    [Mantenimiento_aud].[fec_reg] AS [fec_reg], 
+    [Mantenimiento_aud].[usu_reg] AS [usu_reg], 
+    [Mantenimiento_aud].[fec_ult_mod] AS [fec_ult_mod], 
+    [Mantenimiento_aud].[usu_ult_mod] AS [usu_ult_mod], 
+    [Mantenimiento_aud].[accion] AS [accion], 
+    [Mantenimiento_aud].[fechaAccion] AS [fechaAccion]
+    FROM [dbo].[Mantenimiento_aud] AS [Mantenimiento_aud]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Maquinaria_aud" EntityType="Self.Maquinaria_aud" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Maquinaria_aud].[id_maquinaria] AS [id_maquinaria], 
+    [Maquinaria_aud].[id_yacimiento] AS [id_yacimiento], 
+    [Maquinaria_aud].[tipo] AS [tipo], 
+    [Maquinaria_aud].[marca] AS [marca], 
+    [Maquinaria_aud].[modelo] AS [modelo], 
+    [Maquinaria_aud].[est_maq] AS [est_maq], 
+    [Maquinaria_aud].[UltRevision] AS [UltRevision], 
+    [Maquinaria_aud].[fec_reg] AS [fec_reg], 
+    [Maquinaria_aud].[usu_reg] AS [usu_reg], 
+    [Maquinaria_aud].[fec_ult_mod] AS [fec_ult_mod], 
+    [Maquinaria_aud].[usu_ult_mod] AS [usu_ult_mod], 
+    [Maquinaria_aud].[accion] AS [accion], 
+    [Maquinaria_aud].[fechaAccion] AS [fechaAccion]
+    FROM [dbo].[Maquinaria_aud] AS [Maquinaria_aud]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Yacimiento_aud" EntityType="Self.Yacimiento_aud" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Yacimiento_aud].[id_yacimiento] AS [id_yacimiento], 
+    [Yacimiento_aud].[nombre] AS [nombre], 
+    [Yacimiento_aud].[id_ubigeo] AS [id_ubigeo], 
+    [Yacimiento_aud].[fechaInicio] AS [fechaInicio], 
+    [Yacimiento_aud].[est_yac] AS [est_yac], 
+    [Yacimiento_aud].[fec_reg] AS [fec_reg], 
+    [Yacimiento_aud].[usu_reg] AS [usu_reg], 
+    [Yacimiento_aud].[fec_ult_mod] AS [fec_ult_mod], 
+    [Yacimiento_aud].[usu_ult_mod] AS [usu_ult_mod], 
+    [Yacimiento_aud].[accion] AS [accion], 
+    [Yacimiento_aud].[fechaAccion] AS [fechaAccion]
+    FROM [dbo].[Yacimiento_aud] AS [Yacimiento_aud]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__Asignacio__id_em__37A5467C" Association="Self.FK__Asignacio__id_em__37A5467C">
+      <End Role="Empleado" EntitySet="Empleado" />
+      <End Role="Asignacion_empleados" EntitySet="Asignacion_empleados" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Asignacio__id_ex__3A81B327" Association="Self.FK__Asignacio__id_ex__3A81B327">
+      <End Role="Extraccion" EntitySet="Extraccion" />
+      <End Role="Asignacion_maquinaria" EntitySet="Asignacion_maquinaria" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Asignacio__id_ma__3B75D760" Association="Self.FK__Asignacio__id_ma__3B75D760">
+      <End Role="Maquinaria" EntitySet="Maquinaria" />
+      <End Role="Asignacion_maquinaria" EntitySet="Asignacion_maquinaria" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Asignacio__id_ya__36B12243" Association="Self.FK__Asignacio__id_ya__36B12243">
+      <End Role="Yacimiento" EntitySet="Yacimiento" />
+      <End Role="Asignacion_empleados" EntitySet="Asignacion_empleados" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Detalle_E__id_ex__403A8C7D" Association="Self.FK__Detalle_E__id_ex__403A8C7D">
+      <End Role="Extraccion" EntitySet="Extraccion" />
+      <End Role="Detalle_Extraccion" EntitySet="Detalle_Extraccion" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Detalle_E__id_mi__412EB0B6" Association="Self.FK__Detalle_E__id_mi__412EB0B6">
+      <End Role="Mineral" EntitySet="Mineral" />
+      <End Role="Detalle_Extraccion" EntitySet="Detalle_Extraccion" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Detalle_E__id_un__4222D4EF" Association="Self.FK__Detalle_E__id_un__4222D4EF">
+      <End Role="Unidad" EntitySet="Unidad" />
+      <End Role="Detalle_Extraccion" EntitySet="Detalle_Extraccion" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Extraccio__id_ya__31EC6D26" Association="Self.FK__Extraccio__id_ya__31EC6D26">
+      <End Role="Yacimiento" EntitySet="Yacimiento" />
+      <End Role="Extraccion" EntitySet="Extraccion" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Maquinari__id_ya__2F10007B" Association="Self.FK__Maquinari__id_ya__2F10007B">
+      <End Role="Yacimiento" EntitySet="Yacimiento" />
+      <End Role="Maquinaria" EntitySet="Maquinaria" />
+    </AssociationSet>
+    <AssociationSet Name="FK_id_cargo" Association="Self.FK_id_cargo">
+      <End Role="Cargos" EntitySet="Cargos" />
+      <End Role="Empleado" EntitySet="Empleado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_id_ubigeo" Association="Self.FK_id_ubigeo">
+      <End Role="Ubigeo" EntitySet="Ubigeo" />
+      <End Role="Empleado" EntitySet="Empleado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Mant_id_maquinaria" Association="Self.FK_Mant_id_maquinaria">
+      <End Role="Maquinaria" EntitySet="Maquinaria" />
+      <End Role="Mantenimiento" EntitySet="Mantenimiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Yac_id_ubigeo" Association="Self.FK_Yac_id_ubigeo">
+      <End Role="Ubigeo" EntitySet="Ubigeo" />
+      <End Role="Yacimiento" EntitySet="Yacimiento" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

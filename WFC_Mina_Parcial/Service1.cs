@@ -15,6 +15,8 @@ namespace DemoServiceInfracciones
     {
         // los insumos ....
         SqlConnection cnx = new SqlConnection(@"server=LAPTOP-CI3GTFUK;Database=Mineria;Integrated Security=SSPI");
+        //SqlConnection cnx = new SqlConnection(@"server=DESKTOP-GERA;Database=Mineria;Integrated Security=SSPI");
+
         SqlCommand cmd = new SqlCommand();
         SqlDataAdapter ada; 
         DataSet dts = new DataSet();

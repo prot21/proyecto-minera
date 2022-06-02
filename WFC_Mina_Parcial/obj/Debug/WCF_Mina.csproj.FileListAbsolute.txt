@@ -5,3 +5,15 @@ C:\5to-ciclo\da2\ss3\Semana03-Introduccion a los Servicios WCF\DemoWCF_02\DemoSe
 C:\5to-ciclo\da2\ss3\Semana03-Introduccion a los Servicios WCF\DemoWCF_02\DemoServiceInfracciones\obj\Debug\DemoServiceInfracciones.dll
 C:\5to-ciclo\da2\ss3\Semana03-Introduccion a los Servicios WCF\DemoWCF_02\DemoServiceInfracciones\obj\Debug\DemoServiceInfracciones.pdb
 C:\5to-ciclo\da2\ss3\Semana03-Introduccion a los Servicios WCF\DemoWCF_02\DemoServiceInfracciones\obj\Debug\WCF_Mina.csprojAssemblyReference.cache
+E:\ISIL\ISIL-CURSOS-5\APPS2\PROYECTO  MINERA\PARCIAL-PROYECTO-MINA\WFC_Mina_Parcial\bin\Debug\DemoServiceInfracciones.dll.config
+E:\ISIL\ISIL-CURSOS-5\APPS2\PROYECTO  MINERA\PARCIAL-PROYECTO-MINA\WFC_Mina_Parcial\bin\Debug\DemoServiceInfracciones.dll
+E:\ISIL\ISIL-CURSOS-5\APPS2\PROYECTO  MINERA\PARCIAL-PROYECTO-MINA\WFC_Mina_Parcial\bin\Debug\DemoServiceInfracciones.pdb
+E:\ISIL\ISIL-CURSOS-5\APPS2\PROYECTO  MINERA\PARCIAL-PROYECTO-MINA\WFC_Mina_Parcial\bin\Debug\EntityFramework.dll
+E:\ISIL\ISIL-CURSOS-5\APPS2\PROYECTO  MINERA\PARCIAL-PROYECTO-MINA\WFC_Mina_Parcial\bin\Debug\EntityFramework.SqlServer.dll
+E:\ISIL\ISIL-CURSOS-5\APPS2\PROYECTO  MINERA\PARCIAL-PROYECTO-MINA\WFC_Mina_Parcial\bin\Debug\EntityFramework.xml
+E:\ISIL\ISIL-CURSOS-5\APPS2\PROYECTO  MINERA\PARCIAL-PROYECTO-MINA\WFC_Mina_Parcial\bin\Debug\EntityFramework.SqlServer.xml
+E:\ISIL\ISIL-CURSOS-5\APPS2\PROYECTO  MINERA\PARCIAL-PROYECTO-MINA\WFC_Mina_Parcial\obj\Debug\WCF_Mina.csproj.AssemblyReference.cache
+E:\ISIL\ISIL-CURSOS-5\APPS2\PROYECTO  MINERA\PARCIAL-PROYECTO-MINA\WFC_Mina_Parcial\obj\Debug\WCF_Mina.csproj.CoreCompileInputs.cache
+E:\ISIL\ISIL-CURSOS-5\APPS2\PROYECTO  MINERA\PARCIAL-PROYECTO-MINA\WFC_Mina_Parcial\obj\Debug\WCF_Mina.csproj.CopyComplete
+E:\ISIL\ISIL-CURSOS-5\APPS2\PROYECTO  MINERA\PARCIAL-PROYECTO-MINA\WFC_Mina_Parcial\obj\Debug\DemoServiceInfracciones.dll
+E:\ISIL\ISIL-CURSOS-5\APPS2\PROYECTO  MINERA\PARCIAL-PROYECTO-MINA\WFC_Mina_Parcial\obj\Debug\DemoServiceInfracciones.pdb
