@@ -1,0 +1,20 @@
+C:\Users\pc\source\repos\DemoWCF_02\DemoServiceInfracciones\obj\Debug\DemoServiceInfracciones.csproj.AssemblyReference.cache
+C:\Users\pc\source\repos\DemoWCF_02\DemoServiceInfracciones\obj\Debug\DemoServiceInfracciones.csproj.CoreCompileInputs.cache
+C:\Users\pc\source\repos\DemoWCF_02\DemoServiceInfracciones\bin\Debug\DemoServiceInfracciones.dll.config
+C:\Users\pc\source\repos\DemoWCF_02\DemoServiceInfracciones\bin\Debug\DemoServiceInfracciones.dll
+C:\Users\pc\source\repos\DemoWCF_02\DemoServiceInfracciones\bin\Debug\DemoServiceInfracciones.pdb
+C:\Users\pc\source\repos\DemoWCF_02\DemoServiceInfracciones\obj\Debug\DemoServiceInfracciones.dll
+C:\Users\pc\source\repos\DemoWCF_02\DemoServiceInfracciones\obj\Debug\DemoServiceInfracciones.pdb
+C:\Users\JORGE\OneDrive\Documentos\5to-ciclo\da2\ss3\Semana03-Introduccion a los Servicios WCF\DemoWCF_02\DemoServiceInfracciones\bin\Debug\DemoServiceInfracciones.dll.config
+C:\Users\JORGE\OneDrive\Documentos\5to-ciclo\da2\ss3\Semana03-Introduccion a los Servicios WCF\DemoWCF_02\DemoServiceInfracciones\bin\Debug\DemoServiceInfracciones.dll
+C:\Users\JORGE\OneDrive\Documentos\5to-ciclo\da2\ss3\Semana03-Introduccion a los Servicios WCF\DemoWCF_02\DemoServiceInfracciones\bin\Debug\DemoServiceInfracciones.pdb
+C:\Users\JORGE\OneDrive\Documentos\5to-ciclo\da2\ss3\Semana03-Introduccion a los Servicios WCF\DemoWCF_02\DemoServiceInfracciones\obj\Debug\DemoServiceInfracciones.csproj.CoreCompileInputs.cache
+C:\Users\JORGE\OneDrive\Documentos\5to-ciclo\da2\ss3\Semana03-Introduccion a los Servicios WCF\DemoWCF_02\DemoServiceInfracciones\obj\Debug\DemoServiceInfracciones.dll
+C:\Users\JORGE\OneDrive\Documentos\5to-ciclo\da2\ss3\Semana03-Introduccion a los Servicios WCF\DemoWCF_02\DemoServiceInfracciones\obj\Debug\DemoServiceInfracciones.pdb
+C:\5to-ciclo\da2\ss3\Semana03-Introduccion a los Servicios WCF\DemoWCF_02\DemoServiceInfracciones\bin\Debug\DemoServiceInfracciones.dll.config
+C:\5to-ciclo\da2\ss3\Semana03-Introduccion a los Servicios WCF\DemoWCF_02\DemoServiceInfracciones\bin\Debug\DemoServiceInfracciones.dll
+C:\5to-ciclo\da2\ss3\Semana03-Introduccion a los Servicios WCF\DemoWCF_02\DemoServiceInfracciones\bin\Debug\DemoServiceInfracciones.pdb
+C:\5to-ciclo\da2\ss3\Semana03-Introduccion a los Servicios WCF\DemoWCF_02\DemoServiceInfracciones\obj\Debug\DemoServiceInfracciones.csprojAssemblyReference.cache
+C:\5to-ciclo\da2\ss3\Semana03-Introduccion a los Servicios WCF\DemoWCF_02\DemoServiceInfracciones\obj\Debug\DemoServiceInfracciones.csproj.CoreCompileInputs.cache
+C:\5to-ciclo\da2\ss3\Semana03-Introduccion a los Servicios WCF\DemoWCF_02\DemoServiceInfracciones\obj\Debug\DemoServiceInfracciones.dll
+C:\5to-ciclo\da2\ss3\Semana03-Introduccion a los Servicios WCF\DemoWCF_02\DemoServiceInfracciones\obj\Debug\DemoServiceInfracciones.pdb
