@@ -49,8 +49,18 @@ namespace DemoServiceInfracciones
                 throw new Exception(ex.Message);
             }
         }
+        private String mvarid_extraccion;
+        private DateTime mvarfechaInicio;
+        private DateTime mvarfechaFin;
+        private String mvarest_extraccion;
+        private String mvarid_yacimiento;
+        private DateTime mvarfec_reg;
+        private String mvarusu_reg;
+        private DateTime mvarfec_ult_mod;
+        private String varusu_ult_mod;
 
-        public bool InsertVendedor(MaquinariaBE objmaquinariaBE)
+
+        public bool InsertMaquinaria(MaquinariaBE objMaquinariaBE)
         {
             //Creamos la instancia del modelo
             MineriaEntities MineraDB = new MineriaEntities();
@@ -65,16 +75,16 @@ namespace DemoServiceInfracciones
                     ).ToArray();
                 string ultimoId = objMaquinariaSelect[objMaquinariaSelect.Length - 1];
                 objMaquinaria.id_maquinaria = "M" + (int.Parse(ultimoId.Split('M')[1]) + 1);
-                objMaquinaria.id_yacimiento = objmaquinariaBE.id_yacimiento;
-                objMaquinaria.tipo = objmaquinariaBE.tipo;
-                objMaquinaria.marca = objmaquinariaBE.marca;
-                objMaquinaria.modelo = objmaquinariaBE.modelo;
-                objMaquinaria.est_maq = objmaquinariaBE.est_maq;
-                objMaquinaria.UltRevision = Convert.ToDateTime(objmaquinariaBE.UltRevision);
-                objMaquinaria.fec_reg = Convert.ToDateTime(objmaquinariaBE.fec_reg);
-                objMaquinaria.usu_reg = objmaquinariaBE.usu_reg;
-                objMaquinaria.fec_ult_mod = Convert.ToDateTime(objmaquinariaBE.fec_ult_mod);
-                objMaquinaria.usu_ult_mod = objmaquinariaBE.usu_ult_mod;
+                objMaquinaria.id_yacimiento = objMaquinariaBE.id_yacimiento;
+                objMaquinaria.tipo = objMaquinariaBE.tipo;
+                objMaquinaria.marca = objMaquinariaBE.marca;
+                objMaquinaria.modelo = objMaquinariaBE.modelo;
+                objMaquinaria.est_maq = objMaquinariaBE.est_maq;
+                objMaquinaria.UltRevision = Convert.ToDateTime(objMaquinariaBE.UltRevision);
+                objMaquinaria.fec_reg = Convert.ToDateTime(objMaquinariaBE.fec_reg);
+                objMaquinaria.usu_reg = objMaquinariaBE.usu_reg;
+                objMaquinaria.fec_ult_mod = Convert.ToDateTime(objMaquinariaBE.fec_ult_mod);
+                objMaquinaria.usu_ult_mod = objMaquinariaBE.usu_ult_mod;
 
                 MineraDB.Maquinaria.Add(objMaquinaria);
 

@@ -14,7 +14,7 @@ namespace DemoServiceInfracciones
         MaquinariaBE ConsultarMaquinaria(String id_maquinaria);
         [OperationContract]
         List<MaquinariaBE> ListarMaquinaria();
-        bool InsertVendedor(MaquinariaBE objmaquinariaBE);
+        bool InsertMaquinaria(MaquinariaBE objMaquinariaBE);
 
         [OperationContract]
         bool UpdateMaquinaria(MaquinariaBE objMaquinariaBE);

@@ -14,7 +14,7 @@ namespace DemoServiceInfracciones
     public class Service1 : IService1
     {
         // los insumos ....
-        SqlConnection cnx = new SqlConnection(@"server=LAPTOP-CI3GTFUK;Database=Mineria;Integrated Security=SSPI");
+        SqlConnection cnx = new SqlConnection(@"server=DESKTOP-GERA;Database=Mineria;Integrated Security=SSPI");
         //SqlConnection cnx = new SqlConnection(@"server=DESKTOP-GERA;Database=Mineria;Integrated Security=SSPI");
 
         SqlCommand cmd = new SqlCommand();
